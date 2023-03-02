@@ -2,26 +2,46 @@
   <mat-card-title>Login (Reactive)</mat-card-title>
   <mat-card-content>
 
-    <form class="login-form data-form">
+    <form class="login-form data-form" [formGroup]="form">
 
       <mat-form-field>
 
         <input matInput type="email" name="email"
+               formControlName="email"
                placeholder="Email">
+        <mat-error *ngIf="email.errors?.required">email is mandatory</mat-error>
 
       </mat-form-field>
 
       <mat-form-field>
 
-        <input matInput type="password" placeholder="Password">
+        <input matInput type="password"
+               formControlName="password"
+               placeholder="Password">
 
+        <mat-error *ngIf="password.errors?.minlength">
+          password is short since only {{ password.value?.length }} / {{ password.errors?.minlength.requiredLength}}
+        </mat-error>
+        <mat-error *ngIf="password.errors?.passwordStrength">
+          password now strong!
+        </mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" [disabled]="form.invalid">
         Login
       </button>
 
     </form>
+
+    <br>
+
+    <div class="form-val">
+      {{ form.value | json }}
+    </div>
+
+    <div class="form-val">
+      {{ form.valid }}
+    </div>
 
   </mat-card-content>
 </mat-card>
