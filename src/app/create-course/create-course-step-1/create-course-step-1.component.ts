@@ -10,9 +10,19 @@ import {filter} from 'rxjs/operators';
   styleUrls: ['./create-course-step-1.component.scss']
 })
 export class CreateCourseStep1Component implements OnInit {
+  form = this.fb.group({
+    food: ['', Validators.required],
+    quantity: [10, [Validators.required, Validators.max(100)]]
+  });
+
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
+  }
 
+  get quantity() {
+    return this.form.controls['quantity'];
   }
 
 }

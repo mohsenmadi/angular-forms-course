@@ -1,1 +1,17 @@
 <p>step 1</p>
+<div [formGroup]="form">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <input matInput
+           placeholder="Ex. Pizza"
+           formControlName="food" value="Sushi">
+  </mat-form-field>
+
+  <choose-quantity [increment]="10" formControlName="quantity">
+  </choose-quantity>
+  <mat-error *ngIf="quantity.errors?.mustBePositive">
+    Quantity of {{ quantity.errors.mustBePositive.quantity }} is below 0!
+  </mat-error>
+</div>
+
