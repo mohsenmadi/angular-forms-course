@@ -1,17 +1,32 @@
 <p>step 1</p>
-<div [formGroup]="form">
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput
-           placeholder="Ex. Pizza"
-           formControlName="food" value="Sushi">
-  </mat-form-field>
+<br>
 
-  <choose-quantity [increment]="10" formControlName="quantity">
-  </choose-quantity>
-  <mat-error *ngIf="quantity.errors?.mustBePositive">
-    Quantity of {{ quantity.errors.mustBePositive.quantity }} is below 0!
-  </mat-error>
-</div>
+<value-accessor-example></value-accessor-example>
+
+<br>
+<br>
+<!--<div [formGroup]="form">-->
+
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <mat-label>Favorite food</mat-label>-->
+<!--    <input matInput-->
+<!--           placeholder="Ex. Pizza"-->
+<!--           formControlName="food">-->
+<!--    <mat-error *ngIf="food.errors">-->
+<!--      Quantity of {{ food.errors | json }}-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+
+<!--  <cva-input [parentForm]="form"-->
+<!--             [fieldName]="'drink'"-->
+<!--             formControlName="drink">-->
+<!--  </cva-input>-->
+
+<!--  <choose-quantity [increment]="10" formControlName="quantity">-->
+<!--  </choose-quantity>-->
+<!--  <mat-error *ngIf="quantity.errors?.mustBePositive">-->
+<!--    Quantity of {{ quantity.errors.mustBePositive.quantity }} is below 0!-->
+<!--  </mat-error>-->
+<!--</div>-->
 

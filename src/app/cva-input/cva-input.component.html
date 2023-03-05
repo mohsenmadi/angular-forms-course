@@ -1,0 +1,16 @@
+<mat-form-field [ngClass]=
+                  "{'mdc-text-field--invalid': formField.invalid && formField.touched}">
+  <mat-label>Favorite drink</mat-label>
+  <input matInput
+         [value]="value"
+         (input)="onChange($any($event.target).value)"
+         (blur)="onTouched()"
+         [disabled]="disabled"
+         placeholder="ex. romman">
+</mat-form-field>
+<!--<mat-error *ngIf="formField.invalid && formField.touched"-->
+<!--           style="color: #f44336; font-size: 12px; margin-top: -20px; margin-left: 15px">-->
+<!--  errors: {{ formField.errors | json }}-->
+<!--</mat-error>-->
+<br>
+==> {{ formField.touched }}

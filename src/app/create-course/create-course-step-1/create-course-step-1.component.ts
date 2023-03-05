@@ -11,14 +11,30 @@ import {filter} from 'rxjs/operators';
 })
 export class CreateCourseStep1Component implements OnInit {
   form = this.fb.group({
-    food: ['', Validators.required],
-    quantity: [10, [Validators.required, Validators.max(100)]]
+    food: ['bazeen',
+      [Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(10)]],
+    drink: ['romman',
+      [Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(10)]],
+    quantity: [10,
+      [Validators.required, Validators.max(100)]]
   });
 
   constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
+  }
+
+  get food() {
+    return this.form.controls['food'];
+  }
+
+  get drink() {
+    return this.form.controls['drink'];
   }
 
   get quantity() {

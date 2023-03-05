@@ -42,22 +42,18 @@ export class ChooseQuantityComponent implements ControlValueAccessor, Validator 
   disabled = false;
 
   writeValue(quantity: number): void {
-    console.log('==wv', quantity);
     this.quantity = quantity;
   }
 
   registerOnChange(onChange: any): void {
-    console.log('==roc', onChange);
     this.onChange = onChange;
   }
 
   registerOnTouched(onTouched: any): void {
-    console.log('==rot', onTouched);
     this.onTouched = onTouched;
   }
 
   setDisabledState(isDisabled: boolean): void {
-    console.log('==sds', isDisabled);
     this.disabled = isDisabled;
   }
 

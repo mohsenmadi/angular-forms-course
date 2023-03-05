@@ -43,6 +43,9 @@ import {FileUploadComponent} from './file-upload/file-upload.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {LoginReactiveComponent} from './login-reactive/login-reactive.component';
 import { ChooseQuantityComponent } from './choose-quantity/choose-quantity.component';
+import { CvaInputComponent } from './cva-input/cva-input.component';
+import { LockInputComponent } from './complex-form-control/lock-input/lock-input.component';
+import { ValueAccessorExampleComponent } from './complex-form-control/value-accessor-example/value-accessor-example.component';
 
 @NgModule({
     declarations: [
@@ -60,7 +63,10 @@ import { ChooseQuantityComponent } from './choose-quantity/choose-quantity.compo
         AddressFormComponent,
         FileUploadComponent,
         LoginReactiveComponent,
-        ChooseQuantityComponent
+        ChooseQuantityComponent,
+        CvaInputComponent,
+        LockInputComponent,
+        ValueAccessorExampleComponent
     ],
     imports: [
         BrowserModule,
